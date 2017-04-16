@@ -17,7 +17,8 @@ public class Wrapper {
 	public Wrapper(){}
 	public Wrapper(Name name){ this.wrap = name;}
 	
-	@JsonProperty("encasing")
+	//@JsonProperty("encasing")
+	//@XmlElement
 	public Name getWrap() {
 		return wrap;
 	}

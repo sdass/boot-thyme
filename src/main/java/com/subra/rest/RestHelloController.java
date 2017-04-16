@@ -1,7 +1,11 @@
 package com.subra.rest;
 
+
+import javax.print.attribute.standard.Media;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.subra.model.Name;
 import com.subra.model.Wrapper;
+
 
 @RestController //redundant @ResponseBody
 //@Controller //must need @ResponseBody
@@ -42,8 +47,9 @@ public class RestHelloController {
 		
 	}	
 	
-	@RequestMapping(value="/hellowrapxml", produces= { "application/xml", "text/xml" })
-	public @ResponseBody Wrapper helloWrapXML(Model model, @RequestParam(value="yourname", required=false,defaultValue="anonymous") String name0) {
+	@RequestMapping(value="/hellowrapxml", produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})//produces= { "application/xml", "text/xml" })
+	//public @ResponseBody Wrapper helloWrapXML(Model model, @RequestParam(value="yourname", required=false,defaultValue="anonymous") String name0) {
+	public  Wrapper helloWrapXML(Model model, @RequestParam(value="yourname", required=false,defaultValue="anonymous") String name0) {
 		log.debug("hellowrapxml:passed name=" + name0);
 
 		Name n1 = new Name();

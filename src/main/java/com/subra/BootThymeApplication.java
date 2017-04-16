@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BootThymeApplication {
 
 	public static void main(String[] args) {
+		System.out.println("check 2");
 		SpringApplication.run(BootThymeApplication.class, args);
 	}
 }
